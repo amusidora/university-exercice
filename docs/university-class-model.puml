@@ -1,0 +1,42 @@
+@startuml
+'https://plantuml.com/class-diagram
+enum Grade{
+  ROOKIE,
+  SOPHOMORE,
+  ADVANCED
+}
+class University{
+  - String name
+  - String city
+}
+class Course{
+  - String name
+  - String minimumGrade
+  - String credits
+}
+
+class Student{
+  - String name
+  - Grade currentGrade
+}
+class Module{
+  - int durationHours
+  - String name
+}
+class Diploma {
+String name
+}
+class Professor{
+  - String name
+}
+
+University o-- Diploma
+Diploma o-- Module
+Module o-- Course
+Course o-- Professor
+
+'Course o- Module :composedBy
+'University o- Course : offers
+Student -- Diploma :registeredTo
+University o-- Professor
+@enduml

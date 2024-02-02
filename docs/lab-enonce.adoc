@@ -1,0 +1,34 @@
+= Lab University
+
+== Enoncé
+Nous allons gérer de manière triviale un système de gestion de cours dans 1 université.
+La modélisation proposée est la suivante : link:university-class-model.png[Modèle UML Université]
+
+=== Tâches attendues
+. Traduire le modèle en Java (penser aux accesseurs)
+. Afficher la liste des modules nécessaires pour 1 cours donné
+. Calculer le nombre d'heures de cours  pour 1 étudiant inscrit dans un cours donné
+. afficher la liste des professeurs animant les cours pour 1 étudiant donné
+. Gérer les listes de références (modules composant 1 cours, durée d'un module etc..) sous forme de fichiers JSON
+
+Dans 1 premier temps la partie configuration de l'application sera gérée en mémoire (dans des structures de données). La question 5 sera traitée si le temps le permet.
+
+== Aide
+
+=== Modélisation en Java
+
+Penser à créer un package (au moins)
+Penser à créer une ou plusieurs exceptions (nom de cours/module/étudiant inconnu par exemple)
+Gérer les configurations (exemple:relation module-cours) sous forme de listes et non de tableaux.
+
+=== Parsing JSON
+
+Pour la partie JSOn vous reporter aux screenshots montrant le parsing du JSON renvoyé par OpenStreetMap sous JShell (montre la démarche et les APIs):
+
+. link:jshell-classpath.png[lancement de jshell]
+. link:jshell-http-request-openstreetmap.png[requete Http vers Openstreetmap]
+. link:jshell-json-strring.png[obtenir le JSON]
+. link:jshell-parse-json.png[Parser le JSON]
+
+Il faudra ajouter une dépendance vers la librairie json-simple v1.1
+

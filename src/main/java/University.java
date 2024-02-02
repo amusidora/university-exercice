@@ -1,5 +1,7 @@
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class University {
     private String name;
@@ -41,5 +43,19 @@ public class University {
 
     public Diploma getDiploma() {
         return diploma;
+    }
+
+    public Set<String> getProfessorsForDiploma(Diploma diploma) {
+        List<Module> modulesForDiploma = diploma.getModules();
+        Set<String> professorNames = new HashSet<>();
+
+        for(Module i : modulesForDiploma) {
+            List<Course> coursesForModule = i.getCourses();
+            for(Course j : coursesForModule) {
+                String professorForCourse = j.getProfessor().getName();
+                professorNames.add(professorForCourse);
+            }
+        }
+        return professorNames;
     }
 }
